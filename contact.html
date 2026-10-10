@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Contact - WCC</title>
 </head>
 
 <body>
 
     <header>
-
         <!-- Container for logo and h1 -->
         <div class="header-container">
             <img src="images/WCC.png" alt="The Wausau Chess Club logo" id="header-logo">
     
-            <h1>Wausau Area Chess Club</h1>
+            <h1>Wausau Chess Club</h1>
         </div>
     
     
@@ -24,18 +24,38 @@
             <a href="about.html">ABOUT</a>
             <a href="contact.html">CONTACT</a>
         </nav>
-
     </header>
 
-    <h2>Contact</h2>
+    <!-- Contact Page top content -->
+    <main class="contact-page">
+        <section class="contact-intro">
+            <h2>Contact</h2>
+            <p>Have a question? Send us a message or reach out on Facebook.</p>
+            <a href="https://www.facebook.com/WausauChess/" class="contact-links">Wausau Chess on Facebook</a>
+        </section>
+        
+        <!-- Contact Form -->
+        <form
+            action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
+            method="POST"
+            id="contact-form"
+            aria-describedby="contact-form-status">
 
-    <p>Here is how you may get in touch with us</p>
+            <h2>Send us a message</h2>
 
-    <p>Facebook Page:</p>
+            <label for="contact-email">Your email</label>
+            <input id="contact-email" type="email" name="email" autocomplete="email" required>
 
-    <a href="https://www.facebook.com/WausauChess/" class="contact-links">Wausau Chess</a>
+            <label for="contact-message">Your message</label>
+            <textarea id="contact-message" name="message" required rows="7"></textarea>
 
-    <br>
+            <div class="form-buttons">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+
+        <p id="contact-form-status" role="status" aria-live="polite"></p>
+    </main>
 
     <hr>
 
