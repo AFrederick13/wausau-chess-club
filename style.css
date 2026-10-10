@@ -27,6 +27,10 @@ body {
     letter-spacing: 0.01em;
 }
 
+hr {
+    box-shadow: 0px 0px 6px #182536;
+}
+
 
 /* All content inside the heading tags */
 h1,h2,h3 {
@@ -53,13 +57,65 @@ p {
     max-width: 120ch;
 }
 
-/* Announcements paragraph */
+/* All content inside the main tags */
+main {
+    display: flow-root;
+}
+
+/* Section wrap for Announcements and Welcome Info */
+.home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.25rem;
+    width: min(1100px, calc(100% - 2rem));
+    margin: 2.5rem auto 3rem;
+}
+
+/* Article wrap for both intro cards */
+.intro-card {
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid #e2e9f0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(24 37 54 / 9%);
+}
+
+.announcement-card {
+    border-top: 4px solid #e5b942;
+    background: #fffaf0;
+}
+
+/* Small label text for intro cards */
+.intro-card .card-label {
+    margin: 0 0 0.6rem;
+    padding: 0;
+    color: #587086;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.intro-card h2 {
+    margin: 0 0 1rem;
+    text-align: left;
+}
+
+.intro-card p:not(.card-label) {
+    max-width: none;
+    padding: 0;
+    text-align: left;
+}
+
+/* Annoucements paragraph */
 #announcements {
-    border: 1px solid black;
-    border-radius: 15px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    width: 95%;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.meetings-section h2 {
+    margin-top: 0;
 }
 
 
@@ -191,6 +247,12 @@ This will override the CSS properties for devices with smaller screens or view p
 This MUST be kept at the very bottom of the CSS file to maintain precedence over any properties above.
 */
 @media (max-width: 700px) {
+    .home-intro {
+        grid-template-columns: 1fr;
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
     header {
         flex-direction: column;
         gap: 0.5rem;
