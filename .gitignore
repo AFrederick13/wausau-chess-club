@@ -1,0 +1,8 @@
+# all files with these names will be ignored by all git pushes
+
+.DS_Store
+Thumbs.db
+node_modules/
+dist/
+build/
+*.log

@@ -1,0 +1,240 @@
+/* 
+Universal CSS file for all pages of the website. 
+Useage:  <link rel="stylesheet" href="style.css">  inside the  <head>  tag of the HTML file to connect this CSS to that individual page.
+*/
+
+
+/* Selects the root HTML tags */
+:root {
+    color-scheme: light;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #182536;
+    background: #f4f7fb;
+}
+
+/* Universal Selecter */
+* {
+    box-sizing: border-box;
+}
+
+
+/* All content inside the body tags  */
+body {
+    min-width: 320px;
+    margin: 0;
+    background: #f4f7fb;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+
+/* All content inside the heading tags */
+h1,h2,h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    margin: 2.5rem 1rem 1.25rem;
+    color: #182536;
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+    text-align: center;
+}
+
+
+/* All content inside the paragraph tags */
+p {
+    padding: 1rem;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 120ch;
+}
+
+
+/* links for contact methods */
+.contact-links {
+    display: block;
+    text-align: center;
+}
+
+/* All content inside of the <header> */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.75rem clamp(1rem, 5vw, 4rem);
+    color: #fff;
+    background: #153653;
+    box-shadow: 0 4px 16px rgb(21 54 83 / 16%);
+}
+
+/* div header-container inside of the header */
+.header-container {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    gap: 1rem;
+}
+
+/* h1 inside the .header-container */
+.header-container h1 {
+    margin: 0;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 700;
+}
+
+/* The Chess Club logo image that is inside the header */
+#header-logo {
+    display: block;
+    width: 125px;
+    max-width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+/* The Chess Club logo image that is on the page itself */
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Navigation bar */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+nav a {
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    color: #e8f1f8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+/* Mouse hover effect on navigation bar */
+nav a:hover,
+nav a:focus-visible {
+    color: #153653;
+    background: #fff;
+}
+
+nav a:focus-visible {
+    outline: 3px solid #f4c95d;
+    outline-offset: 3px;
+}
+
+
+/* Entire Information Table */
+table {
+    width: min(90%, 900px);
+    margin: 0 auto 3rem;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(24 37 54 / 9%);
+}
+
+/* Table Headings and Table Data */
+th,
+td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e2e9f0;
+    text-align: left;
+}
+
+/* Table Headings */
+th {
+    color: #fff;
+    background: #286087;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f7fb;
+}
+
+
+/* 
+This will override the CSS properties for devices with smaller screens or view ports, i.e. Mobile phones or tablets.
+This MUST be kept at the very bottom of the CSS file to maintain precedence over any properties above.
+*/
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem 1rem;
+    }
+
+    .header-container {
+        gap: 0.75rem;
+    }
+
+    #header-logo {
+        width: clamp(64px, 18vw, 88px);
+    }
+
+    .header-container h1 {
+        font-size: clamp(1.2rem, 5.5vw, 1.75rem);
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 0.55rem 0.8rem;
+    }
+
+    table {
+        width: calc(100% - 2rem);
+    }
+
+    th,
+    td {
+        padding: 0.75rem 0.65rem;
+        border-bottom-color: #d5dee8;
+        overflow-wrap: anywhere;
+    }
+
+    th:not(:last-child),
+    td:not(:last-child) {
+        border-right: 1px solid #d5dee8;
+    }
+
+    /* Prevents strange looking word/letter wrap on smaller screen devices */
+    th:nth-child(3),
+    td:nth-child(3) {
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+    /* Prevents strange looking word/letter wrap on smaller screen devices */
+    th:nth-child(2),
+    td:nth-child(2) {
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+}
