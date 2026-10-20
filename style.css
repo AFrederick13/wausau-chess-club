@@ -417,4 +417,10 @@ This MUST be kept at the very bottom of the CSS file to maintain precedence over
         white-space: nowrap;
         overflow-wrap: normal;
     }
+
+    /* Prevents strange looking word/letter wrap on smaller screen devices */
+    th:nth-child(1) {
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
 }
