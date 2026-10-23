@@ -213,7 +213,7 @@ table {
     border-collapse: collapse;
     border-radius: 12px;
     background: #fff;
-    box-shadow: 0 8px 24px rgb(24 37 54 / 9%);
+    box-shadow: 0 8px 20px rgb(24 37 54 / 9%);
     border: 1px solid #e2e9f0;
 }
 
@@ -241,7 +241,7 @@ tbody tr:last-child td {
 }
 
 tbody tr:nth-child(even) {
-    background: #f0f5fd;
+    background: #eef3f6;
 }
 
 tbody tr {
@@ -510,9 +510,10 @@ This MUST be kept at the very bottom of the CSS file to maintain precedence over
         letter-spacing: 0.05em;
         color: #184464;
         background: #e0ebf6;
+        box-shadow: 0 1px 10px rgb(24 37 54 / 25%);
         padding: 0.25rem 0.65rem;
         border-radius: 999px;
-        border: 1px solid #d5e2ed;
+        border: 1px solid #296193;
         white-space: nowrap;
     }
 
