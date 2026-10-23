@@ -214,14 +214,16 @@ table {
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 8px 24px rgb(24 37 54 / 9%);
+    border: 1px solid #e2e9f0;
 }
 
 /* Table Headings and Table Data */
 th,
 td {
-    padding: 0.9rem 1rem;
-    border-bottom: 1px solid #e2e9f0;
+    padding: 0.9rem 1.1rem;
+    border-bottom: 1px solid #cdd9e5;
     text-align: left;
+    vertical-align: middle;
 }
 
 /* Table Headings */
@@ -229,7 +231,8 @@ th {
     color: #fff;
     background: #286087;
     font-size: 0.85rem;
-    letter-spacing: 0.04em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
@@ -238,7 +241,56 @@ tbody tr:last-child td {
 }
 
 tbody tr:nth-child(even) {
-    background: #f4f7fb;
+    background: #f0f5fd;
+}
+
+tbody tr {
+    transition: background-color 150ms ease;
+}
+
+/* Column sizing for desktop table */
+.meetings-table .meeting-day,
+th:nth-child(1),
+td:nth-child(1) {
+    width: 135px;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.meetings-table .meeting-time,
+th:nth-child(2),
+td:nth-child(2) {
+    width: 125px;
+    white-space: nowrap;
+}
+
+.meetings-table .meeting-location,
+th:nth-child(3),
+td:nth-child(3) {
+    width: auto;
+}
+
+/* Location venue and address links */
+.venue-name {
+    font-weight: 700;
+    color: #182536;
+}
+
+.venue-separator {
+    color: #181b1e;
+    margin: 0 0.35rem;
+}
+j
+.venue-address {
+    color: #286087;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 150ms ease;
+}
+
+.venue-address:hover,
+.venue-address:focus-visible {
+    color: #153653;
 }
 
 /* Contact Page */
@@ -388,19 +440,111 @@ This MUST be kept at the very bottom of the CSS file to maintain precedence over
         padding: 0.55rem 0.8rem;
     }
 
+    /* Responsive meeting schedule table converted to clean cards on mobile */
     table {
+        display: block;
         width: calc(100% - 2rem);
+        max-width: 520px;
+        margin: 0 auto 3rem;
+        border-radius: 16px;
+        border: 1px solid #e2e9f0;
     }
 
-    th,
-    td {
-        padding: 0.75rem 0.65rem;
-        border-bottom-color: #d5dee8;
-        overflow-wrap: anywhere;
+    table thead {
+        display: none;
     }
 
-    th:not(:last-child),
-    td:not(:last-child) {
-        border-right: 1px solid #d5dee8;
+    table tbody {
+        display: block;
+    }
+
+    table tr {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "day time"
+            "location location";
+        row-gap: 0.45rem;
+        column-gap: 0.75rem;
+        align-items: center;
+        padding: 1.1rem 1.15rem;
+        border-bottom: 1px solid #e2e9f0;
+    }
+
+    table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    table th,
+    table td {
+        display: block;
+        padding: 0;
+        border: none;
+        border-bottom: none;
+        background: transparent;
+        overflow-wrap: normal;
+    }
+
+    table th:not(:last-child),
+    table td:not(:last-child) {
+        border-right: none;
+    }
+
+    .meetings-table .meeting-day,
+    table td:nth-child(1) {
+        grid-area: day;
+        width: auto;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #153653;
+        white-space: nowrap;
+    }
+
+    .meetings-table .meeting-time,
+    table td:nth-child(2) {
+        grid-area: time;
+        justify-self: end;
+        width: auto;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #184464;
+        background: #e0ebf6;
+        padding: 0.25rem 0.65rem;
+        border-radius: 999px;
+        border: 1px solid #d5e2ed;
+        white-space: nowrap;
+    }
+
+    .meetings-table .meeting-location,
+    table td:nth-child(3) {
+        grid-area: location;
+        width: auto;
+        font-size: 0.95rem;
+        line-height: 1.45;
+        padding-top: 0.15rem;
+    }
+
+    .venue-name {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #182536;
+        margin-bottom: 0.2rem;
+    }
+
+    .venue-separator {
+        display: none;
+    }
+
+    .venue-address {
+        display: inline-block;
+        font-size: 0.88rem;
+        color: #286087;
+        line-height: 1.45;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 }
