@@ -403,24 +403,4 @@ This MUST be kept at the very bottom of the CSS file to maintain precedence over
     td:not(:last-child) {
         border-right: 1px solid #d5dee8;
     }
-
-    /* Prevents strange looking word/letter wrap on smaller screen devices */
-    th:nth-child(3),
-    td:nth-child(3) {
-        white-space: nowrap;
-        overflow-wrap: normal;
-    }
-
-    /* Prevents strange looking word/letter wrap on smaller screen devices */
-    th:nth-child(2),
-    td:nth-child(2) {
-        white-space: nowrap;
-        overflow-wrap: normal;
-    }
-
-    /* Prevents strange looking word/letter wrap on smaller screen devices */
-    th:nth-child(1) {
-        white-space: nowrap;
-        overflow-wrap: normal;
-    }
 }
