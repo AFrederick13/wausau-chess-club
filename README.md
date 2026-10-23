@@ -2,9 +2,9 @@
 
 The official website for the Wausau Chess Club.
 
-- **Live Site:** https://afrederick13.github.io/wausau-chess-club/
+- **Live Site:** https://https://www.wausauchess.org
 
-- **Source Repository:** https://github.com/AFrederick13/wausau-chess-club
+- **Source Repository:** https://github.com/Wausau-Chess-Club/wausau-chess-club
 
 ---
 
